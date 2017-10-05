@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from search.views import LandingView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r"^$",
+        LandingView.as_view(),
+        name="landing")
 ]

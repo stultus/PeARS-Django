@@ -1,3 +1,8 @@
 from django.db import models
+from utilities.models import TimestampedModel
 
-# Create your models here.
+
+class Entropy(TimestampedModel):
+    """This model is to store entropies of words"""
+    name = models.CharField(max_length=100)
+    entropy = models.FloatField()
